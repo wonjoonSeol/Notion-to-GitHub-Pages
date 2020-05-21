@@ -81,8 +81,8 @@ for exported_foldername in ${exported_foldername_array[*]}; do
     # https://stackoverflow.com/questions/16745988/sed-command-with-i-option-in-place-editing-works-fine-on-ubuntu-but-not-mac
     sed -i '' "1s|.*|---|" "$exported_file_path"
     sed -i "" -e $'1 a\\\n'"layout: post" "$exported_file_path" #title은 Notion 제목값으로 자동 입력
-    sed -i "" -e $'1 a\\\n'"title: $meta_title" "$exported_file_path" #title은 Notion 제목값으로 자동 입력
-    sed -i "" -e $'4 a\\\n'"tags: [$meta_tags]" "$exported_file_path"
+    sed -i "" -e $'2 a\\\n'"title: $meta_title" "$exported_file_path" #title은 Notion 제목값으로 자동 입력
+    sed -i "" -e $'3 a\\\n'"tags: [$meta_tags]" "$exported_file_path"
     sed -i "" -e $'4 a\\\n'"image: 07.jpg" "$exported_file_path"
     sed -i "" -e $'5 a\\\n'"date: $meta_date" "$exported_file_path"
     sed -i "" -e $'6 a\\\n'"last_modified_at: $meta_last_modified_at" "$exported_file_path"
